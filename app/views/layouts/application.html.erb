@@ -10,5 +10,11 @@
 
   <body>
     <%= yield %>
+    <% if notice == nil && alert != nil || notice != nil && alert == nil%>
+    <div class="notice-alert">
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    </div>
+    <% end %>
   </body>
 </html>
