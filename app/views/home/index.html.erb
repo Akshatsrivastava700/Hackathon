@@ -18,6 +18,10 @@
 <% Tag.select(:tag_name).where(id: TagChallenge.select(:tag_id).where(challenge_id: challenge.id)).each do |tag|%>
 <%= tag.tag_name%>
 <% end %>
-<%= button_to  %>
+<% if Vote.check(challenge.id, current_user.id) == 0 %>
+  <%= link_to image_tag('add_vote.png'), vote_url(:challenge_id => challenge.id) %>
+<% else %>
+  <%= link_to image_tag('voted.png'), vote_url(:challenge_id => challenge.id) %>
+<% end %>
 </div>
 <% end %>
