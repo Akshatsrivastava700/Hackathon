@@ -1,3 +1,23 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
-<%= link_to "Logout", destroy_user_session_path, method: :delete %>
+<%= render '/layouts/header'%>
+<div id="post-challenge-form">
+<%= form_for :challenge, :url => {:controller => "challenges", :action => "create" }  do |f| %>
+<%= f.text_field :title, :class => "challenge-form-field" %>
+<%= f.text_area :description, :class => "challenge-form-area" %>
+<%= f.collection_select :tag_id, Tag.all, :id, :tag_name %>
+<%= f.text_field :user_id, :type => 'hidden'%>
+<div id="challenge-submit">
+<%= f.submit%>
+</div>
+<% end %>
+</div>
+
+<% @challenges.each do |challenge| %>
+<div>
+<%= challenge.title %>
+<%= challenge.description %>
+<% Tag.select(:tag_name).where(id: TagChallenge.select(:tag_id).where(challenge_id: challenge.id)).each do |tag|%>
+<%= tag.tag_name%>
+<% end %>
+<%= button_to  %>
+</div>
+<% end %>
