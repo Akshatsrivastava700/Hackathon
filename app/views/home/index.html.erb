@@ -22,13 +22,15 @@
 <% if Vote.check(challenge.id, current_user.id) == 0 %>
   <%= link_to image_tag('add_vote.png'), vote_path(:challenge_id => challenge.id) %>
 <% else %>
-  <%= link_to image_tag('voted.png'), vote_path(:challenge_id => challenge.id) %>
+  <%= link_to image_tag('voted.png'), remove_vote_path(:challenge_id => challenge.id) %>
 <% end %>
+
 <% if Collaboration.check(challenge.id, current_user.id) == 0 %>
 <%= link_to image_tag('contribute.png'), collaborate_url(:challenge_id => challenge.id) %>
 <% else %>
-<%= link_to image_tag('contributed.png'), collaborate_url(:challenge_id => challenge.id) %>
+<%= link_to image_tag('contributed.png'), remove_collaboration_url(:challenge_id => challenge.id) %>
 <% end %>
+
 <% @collaborations.where(challenge_id: challenge.id,user_id: current_user.id).each do |collaborate| %>
   <%= User.find(collaborate.user_id.to_i).email %>
 <% end %>
