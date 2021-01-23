@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, :controllers => { registrations: 'registrations' }
   get 'votes/create' => 'votes#create', as: 'vote'
   get 'votes/remove_vote' => 'votes#remove_vote', as: 'remove_vote'
   get 'collaborations/create' => 'collaborations#create', as: 'collaborate'

@@ -1,0 +1,11 @@
+<div class="add-challenge-form-content">
+<%= form_for :challenge, :url => {:controller => "challenges", :action => "create" }  do |f| %>
+<%= f.text_field :title, :class => "challenge-form-field" %>
+<%= f.text_area :description, :class => "challenge-form-area" %>
+<%= f.collection_select :tag_id, @tag, :id, :tag_name %>
+<%= f.text_field :user_id, :type => 'hidden'%>
+<div id="challenge-submit">
+<%= f.submit%>
+</div>
+<% end %>
+</div>
