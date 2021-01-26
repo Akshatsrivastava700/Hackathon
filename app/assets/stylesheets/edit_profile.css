@@ -1,0 +1,68 @@
+.edit-profile-form{
+  margin-top: 2%;
+  margin-left: 40%;
+}
+.edit-profile-form .field{
+  margin: 2%;
+}
+
+.edit-profile-form .input{
+  text-indent: 2%;
+  width: 20em;
+  height: 2.5em;
+  margin-left: 0;
+  background: #f2f2f2;
+  border: 1px solid #e2e2e2;
+  border-radius: 3px;
+  box-shadow: inset 0 1px 1px rgba(200,200,200,0.3);
+  outline: none;
+}
+
+.edit-profile-form .label{
+  font-size: 15px;
+  font-weight: bold;
+  color: #8c8c8c;
+}
+
+.edit-profile-form .actions input{
+  border: none;
+  outline: none;
+  background-color: #000000;
+  color: #ffffff;
+  font-size: 14px;
+  width: 100px;
+  height: 30px;
+  margin-left: 2%;
+}
+
+.delete-profile h2{
+  font-family: 'Cinzel';
+  margin-top: 5%;
+  margin-left: 42%;
+  font-weight: bolder;
+}
+
+.delete-profile div{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-left: 3%;
+}
+
+.delete-profile input{
+  border: none;
+  outline: none;
+  background-color: #000000;
+  color: #ffffff;
+  font-size: 14px;
+  width: 150px;
+  height: 30px;
+  margin-left: 10%;
+}
+
+.delete-profile a{
+  text-decoration: none;
+  color: #000;
+  margin-right: 5%;
+  transform: translateY(40%);
+}

@@ -1,5 +1,5 @@
 <div class="sign-in-header">
-  <h4>Hackathon</h4>
+  <h4><%= image_tag('H.png') %><p>ackathon<p></h4>
   <div class="sign-in-header-links">
   <a id='add-challenge-btn'>Add Challenge</a>
   <%= link_to "Challenges", root_path%>
@@ -19,9 +19,9 @@
       <%= f.label :description, :class => "label" %><br />
       <%= f.text_area :description, :class => "challenge-form-area" %><br />
       <%= f.label "Tag", :class => "label" %><br />
-      <%= f.collection_select :tag_id, @tag, :id, :tag_name %><br />
+      <%= f.collection_select :tag_id, get_tag , :id, :tag_name %><br />
       <%= f.text_field :user_id, :type => 'hidden'%>
-      <div id="challenge-submit"><%= f.submit%></div>
+      <div class="challenge-submit"><%= f.submit%></div>
       <% end %>
     </div>
   </div>
@@ -30,24 +30,5 @@
 
 
 <script>
-
-var form = document.getElementById("add-challenge-form-container");
-var btn = document.getElementById("add-challenge-btn");
-var span = document.getElementsByClassName("close")[0];
-
-btn.onclick = function() {
-  form.style.display = "block";
-}
-
-
-span.onclick = function() {
-  form.style.display = "none";
-}
-
-
-window.onclick = function(event) {
-  if (event.target == form) {
-    form.style.display = "none";
-  }
-}
+showChallengeForm()
 </script>

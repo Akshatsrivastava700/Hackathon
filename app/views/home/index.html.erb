@@ -1,16 +1,29 @@
 <%= render '/layouts/header'%>
+<h2>Challenges</h2>
+<table>
+  <tr class="challenge-info-heading">
+    <th>Title</th>
+    <th>Description</th>
+    <th>Tag</th>
+    <th>Votes</th>
+    <th>Like</th>
+    <th>Collab</th>
+    <th>Collaborators</th>
+  </tr>
 
-
-<% @challenges.each do |challenge| %>
-<div>
-<%= challenge.title %>
-<%= challenge.description %>
-<%= find_tag(challenge.id)%>
-<%= count_vote(challenge.id) %>
-<%= check_vote(challenge.id) %>
-<%= check_collaboration(challenge.id) %>
-<% find_collaborations(challenge.id).each do |collaborate| %>
-  <%= find_user_firstname(collaborate.user_id.to_i) %>
-<% end %>
-</div>
-<% end %>
+  <% @challenges.each do |challenge| %>
+  <tr>
+    <td><%= challenge.title %></td>
+    <td><%= challenge.description %></td>
+    <td><%= find_tag(challenge.id)%></td>
+    <td><%= count_vote(challenge.id) %></td>
+    <td><%= check_vote(challenge.id) %></td>
+    <td><%= check_collaboration(challenge.id) %></td>
+    <td>
+    <% find_collaborations(challenge.id).each do |collaborate| %>
+        <%= find_user_firstname(collaborate.user_id.to_i) %>
+    <% end %>
+    </td>
+  <% end %>
+  </tr>
+</table>

@@ -1,3 +1,33 @@
-// Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+h2{
+    font-family: 'Cinzel';
+    margin-left: 45%;
+    font-weight: bolder;
+}
+.challenge-info-heading{
+  background-color: #000000;
+  margin-bottom: 5%;
+}
+table{
+  width: 100%;
+}
+th{
+  color: #ffffff;
+  height: 35px;
+  border-collapse: collapse;
+  margin-right: -5px;
+  font-weight: bold;
+  font-family: 'Cinzel'
+}
+
+
+table, td {
+  border: 1px solid #e3e3e3;
+  border-collapse: collapse;
+  text-align: center;
+  text-transform: capitalize;
+  height: 50px;
+}
+
+td{
+  color: #404040;
+}

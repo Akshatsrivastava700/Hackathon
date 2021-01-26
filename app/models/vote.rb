@@ -26,4 +26,12 @@ class Vote < ApplicationRecord
     end
     return(0)
   end
+
+  def self.remove(user_id)
+    if Vote.where(user_id: user_id).delete_all
+      return(1)
+    else
+      return(0)
+    end
+  end
 end

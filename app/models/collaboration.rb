@@ -26,4 +26,13 @@ class Collaboration < ApplicationRecord
     end
     return(0)
   end
+
+  def self.remove(user_id)
+    collaborations = Collaboration.where(user_id: user_id)
+    if collaborations.delete_all
+      return(1)
+    else
+      return(0)
+    end
+  end
 end

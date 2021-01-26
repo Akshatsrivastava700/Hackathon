@@ -3,7 +3,8 @@
   <head>
     <title>Hackathon</title>
     <%= csrf_meta_tags %>
-
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -11,9 +12,15 @@
   <body>
     <%= yield %>
     <% if notice == nil && alert != nil || notice != nil && alert == nil%>
-    <div class="notice-alert">
+    <div class="notice-alert", id="notice-alert">
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+    <script type="text/javascript">
+      setTimeout(function(){
+        hideFlashMessage()
+       }, 3000)
+
+    </script>
     </div>
     <% end %>
   </body>
