@@ -4,7 +4,8 @@ class Challenge < ApplicationRecord
 
   validates_presence_of :title
   validates_presence_of :description
-
+  validates_presence_of :user_id
+  #Used only while deleting an user account
   def self.remove(user_id)
     challenges = Challenge.where(user_id: user_id)
     challenges.each do |challenge|

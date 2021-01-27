@@ -1,6 +1,6 @@
 module VotesHelper
   def count_vote(challenge_id)
-    Vote.where(challenge_id: challenge_id,user_id: current_user.id).count
+    Vote.where(challenge_id: challenge_id).count
   end
 
   def check_vote(challenge_id)

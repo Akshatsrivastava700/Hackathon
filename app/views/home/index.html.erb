@@ -1,29 +1,37 @@
 <%= render '/layouts/header'%>
 <h2>Challenges</h2>
-<table>
-  <tr class="challenge-info-heading">
-    <th>Title</th>
-    <th>Description</th>
-    <th>Tag</th>
-    <th>Votes</th>
-    <th>Like</th>
-    <th>Collab</th>
-    <th>Collaborators</th>
-  </tr>
-
-  <% @challenges.each do |challenge| %>
-  <tr>
-    <td><%= challenge.title %></td>
-    <td><%= challenge.description %></td>
-    <td><%= find_tag(challenge.id)%></td>
-    <td><%= count_vote(challenge.id) %></td>
-    <td><%= check_vote(challenge.id) %></td>
-    <td><%= check_collaboration(challenge.id) %></td>
-    <td>
-    <% find_collaborations(challenge.id).each do |collaborate| %>
-        <%= find_user_firstname(collaborate.user_id.to_i) %>
+<table class="table-sortable">
+  <thead>
+    <tr class="challenge-info-heading">
+      <th>Title</th>
+      <th>Description</th>
+      <th>Created At</th>
+      <th>Tag</th>
+      <th>Votes</th>
+      <th>Like</th>
+      <th>Collab</th>
+      <th>Collaborators</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @challenges.each do |challenge| %>
+    <tr>
+      <td><%= challenge.title %></td>
+      <td><%= challenge.description %></td>
+      <td><%= challenge_date_beautify(challenge.created_at)%></td>
+      <td><%= find_tag(challenge.id)%></td>
+      <td><%= count_vote(challenge.id) %></td>
+      <td><%= check_vote(challenge.id) %></td>
+      <td><%= check_collaboration(challenge.id) %></td>
+      <td>
+      <% find_collaborations(challenge.id).each do |collaborate| %>
+          <%= find_user_firstname(collaborate.user_id.to_i) %>
+      <% end %>
+      </td>
     <% end %>
-    </td>
-  <% end %>
-  </tr>
+    </tr>
+  </tbody>
 </table>
+<script>
+  sort()
+</script>

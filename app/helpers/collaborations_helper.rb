@@ -1,6 +1,6 @@
 module CollaborationsHelper
   def find_collaborations(challenge_id)
-    @collaborations.where(challenge_id: challenge_id,user_id: current_user.id)
+    @collaborations.where(challenge_id: challenge_id)
   end
 
   def check_collaboration(challenge_id)
