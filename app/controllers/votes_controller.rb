@@ -7,7 +7,7 @@ class VotesController < ApplicationController
       end
   end
 
-  def remove_vote
+  def destroy
     if Vote.delete_vote(params[:challenge_id], current_user.id) == 1
       redirect_to root_path, notice: "Vote Removed!"
     else
