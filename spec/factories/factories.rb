@@ -21,3 +21,10 @@ FactoryBot.define do
     tag_name { "analysis" }
   end
 end
+
+FactoryBot.define do
+  factory :collaborations do
+    challenge_id {}
+    user {}
+  end
+end

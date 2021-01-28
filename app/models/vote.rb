@@ -13,7 +13,7 @@ class Vote < ApplicationRecord
 
   def self.delete_vote(challenge_id, user_id)
     @vote = Vote.where(challenge_id: challenge_id, user_id: user_id)
-    if @vote.delete(@vote.ids[0].to_i)
+    if @vote.delete(@vote.ids[0].to_i) > 0
       return(1)
     end
     return(0)
