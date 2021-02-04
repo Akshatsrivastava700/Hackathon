@@ -22,7 +22,7 @@
       <td><%= find_tag(challenge.id)%></td>
       <td><%= count_vote(challenge.id) %></td>
       <td><%= check_vote(challenge.id, challenge.user_id) %></td>
-      <td><%= check_collaboration(challenge.id, challenge.user_id) %></td>
+      <td><%= check_collaboration(challenge.id, challenge.user_id, current_user.id) %></td>
       <td>
       <% @collaborations.select(:user_id).where(challenge_id: challenge.id).each do |collaborate| %>
           <%= find_user_firstname(collaborate.user_id.to_i) %>
