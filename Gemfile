@@ -34,10 +34,12 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 group :test do
   gem 'database_cleaner-active_record'
+  gem 'simplecov'
 end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+
   gem 'factory_bot_rails'
   gem 'rspec-rails'
   gem 'shoulda-matchers'
@@ -57,5 +59,6 @@ group :development do
 end
 
 gem 'devise'
+gem 'will_paginate'
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

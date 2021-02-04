@@ -9,9 +9,8 @@ class User < ApplicationRecord
 
 
   def self.remove_user(user_id)
-    if Challenge.remove(user_id)== 1 && Collaboration.remove(user_id) == 1 && Vote.remove(user_id) == 1
-      user = User.find(user_id.to_i)
-      user.delete
+    user = User.find(user_id.to_i)
+    if   user.destroy
       return(1)
     end
     return(0)

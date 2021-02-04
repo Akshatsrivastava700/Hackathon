@@ -1,7 +1,7 @@
 class TagChallenge < ApplicationRecord
   belongs_to :tag
   belongs_to :challenge
-
+  
   validates_presence_of :tag_id
   validates_presence_of :challenge_id
 

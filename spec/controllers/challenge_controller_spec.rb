@@ -11,7 +11,7 @@ RSpec.describe ChallengesController, type: :controller do
       tag_id: tag.id
     }
   end
-  describe "GET /create" do
+  describe "POST /create" do
     context "from challenge create" do
       it "should return 302:OK and flash notice Challenge Added " do
         sign_in user

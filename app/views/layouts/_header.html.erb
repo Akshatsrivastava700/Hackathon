@@ -19,7 +19,7 @@
       <%= f.label :description, :class => "label" %><br />
       <%= f.text_area :description, :class => "challenge-form-area" %><br />
       <%= f.label "Tag", :class => "label" %><br />
-      <%= f.collection_select :tag_id, get_tag , :id, :tag_name %><br />
+      <%= f.collection_select :tag_id, @tag , :id, :tag_name %><br />
       <%= f.text_field :user_id, :type => 'hidden'%>
       <div class="challenge-submit"><%= f.submit%></div>
       <% end %>

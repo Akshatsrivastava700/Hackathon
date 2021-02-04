@@ -3,7 +3,7 @@ class HomeController < ApplicationController
     if user_signed_in?
       @challenges     = Challenge.all
       @collaborations = Collaboration.all
-      @tag            = Tag.all
+      @tag            = Tag.select(:id, :tag_name).all
     else
       redirect_to new_user_session_path
     end
