@@ -24,7 +24,7 @@
       <td><%= check_vote(challenge.id, challenge.user_id) %></td>
       <td><%= check_collaboration(challenge.id, challenge.user_id) %></td>
       <td>
-      <% find_collaborations(challenge.id).each do |collaborate| %>
+      <% @collaborations.select(:user_id).where(challenge_id: challenge.id).each do |collaborate| %>
           <%= find_user_firstname(collaborate.user_id.to_i) %>
       <% end %>
       </td>

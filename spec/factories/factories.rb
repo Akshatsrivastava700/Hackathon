@@ -23,8 +23,8 @@ FactoryBot.define do
 end
 
 FactoryBot.define do
-  factory :collaborations do
-    challenge_id {}
+  factory :collaboration do
+    challenge {}
     user {}
   end
 end
