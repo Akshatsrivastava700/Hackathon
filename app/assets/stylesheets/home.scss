@@ -31,7 +31,12 @@ table, td {
 td{
   color: #404040;
 }
-
+tr{
+  transition: 0.4s;
+}
+tr:hover{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 
 .table-sortable th {
   cursor: pointer;
@@ -57,4 +62,26 @@ td{
 
 .owner-like{
   opacity: 0.2;
+}
+.tag-name{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+#tag{
+  transition: 0.3s;
+  width: 80px;
+  border-radius: 5px;
+}
+#tag:hover{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  color: white;
+  width: 80px;
+  height: 30px;
+  border-radius: 5px;
 }

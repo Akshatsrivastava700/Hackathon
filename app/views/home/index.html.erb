@@ -19,7 +19,7 @@
       <td><%= challenge.title %></td>
       <td><%= challenge.description %></td>
       <td><%= challenge_date_beautify(challenge.created_at)%></td>
-      <td><%= find_tag(challenge.id)%></td>
+      <td class="tag-name"><p id="tag"><%= find_tag(challenge.id)%></p></td>
       <td><%= count_vote(challenge.id) %></td>
       <td><%= check_vote(challenge.id, challenge.user_id, current_user.id) %></td>
       <td><%= check_collaboration(challenge.id, challenge.user_id, current_user.id) %></td>
