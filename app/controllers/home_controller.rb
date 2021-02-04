@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
   def index
     if user_signed_in?
-      @challenges     = Challenge.all
+      @challenges     = Challenge.paginate(page: params[:page])
       @collaborations = Collaboration.all
       @tag            = Tag.select(:id, :tag_name).all
     else

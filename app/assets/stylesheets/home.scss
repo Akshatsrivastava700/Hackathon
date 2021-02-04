@@ -85,3 +85,29 @@ tr:hover{
   height: 30px;
   border-radius: 5px;
 }
+ul {
+   list-style-type: none;
+}
+.pagination{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.pagination li {
+  margin: 1%;
+}
+
+.pagination li a{
+  text-decoration: none;
+  color: black;
+}
+
+.disabled{
+  color: grey;
+}
+
+.active {
+  font-weight: bolder;
+}
