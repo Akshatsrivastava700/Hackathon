@@ -7,31 +7,3 @@ FactoryBot.define do
     sequence(:id) { rand(0..100) }
   end
 end
-
-FactoryBot.define do
-  factory :challenge do
-    title { "test" }
-    description { "test description" }
-    user { FactoryBot.create(:user)}
-  end
-end
-
-FactoryBot.define do
-  factory :tag do
-    tag_name { "analysis" }
-  end
-end
-
-FactoryBot.define do
-  factory :collaboration do
-    challenge {}
-    user {}
-  end
-end
-
-FactoryBot.define do
-  factory :tag_challenge do
-    challenge {}
-     tag {}
-  end
-end

@@ -8,6 +8,11 @@ RSpec.describe HomeController, type: :controller do
         get :index
         expect(response).to have_http_status(:success)
       end
+
+      it "should return 302:OK" do
+        get :index
+        expect(response).to have_http_status(:found)
+      end
     end
   end
 end

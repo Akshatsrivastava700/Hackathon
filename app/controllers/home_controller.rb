@@ -8,12 +8,4 @@ class HomeController < ApplicationController
       redirect_to new_user_session_path
     end
   end
-
-  def destroy
-    if User.remove_user(current_user.id) == 1
-      redirect_to new_user_session_path, alert: "Account Deleted !"
-    else
-      redirect_to root_path, alert: "Account Not Deleted !"
-    end
-  end
 end

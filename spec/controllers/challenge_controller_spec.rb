@@ -2,7 +2,6 @@ require "rails_helper"
 RSpec.describe ChallengesController, type: :controller do
   let(:user)  { FactoryBot.create(:user) }
   let(:tag)  { FactoryBot.create(:tag) }
-  let(:challenge) { FactoryBot.create(:challenge) }
   let(:challenge) do
     {
       title: 'test',
