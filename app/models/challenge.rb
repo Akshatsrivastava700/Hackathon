@@ -8,5 +8,5 @@ class Challenge < ApplicationRecord
   validates_presence_of :description
   validates_presence_of :user_id
 
-  self.per_page = 4
+  self.per_page = 2
 end
