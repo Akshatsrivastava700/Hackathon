@@ -62,22 +62,22 @@
       <div class="col-md-8">
         <div class="row">
           <div class="col-md-1">
-            <div class="rating c big">
-              C
+            <div class="rating b big">
+              B
             </div>
           </div>
           <div class="code-statistics col-md-11">
             <div class="col-md-3">
-              <div><span class="metric">27</span><small> lines of codes</small></div>
-              <div><span class="metric">3</span><small> methods</small></div>
+              <div><span class="metric">35</span><small> lines of codes</small></div>
+              <div><span class="metric">4</span><small> methods</small></div>
             </div>
             <div class="col-md-3">
-              <div><span class="metric">10.4</span><small> complexity/method</small></div>
+              <div><span class="metric">8.5</span><small> complexity/method</small></div>
               <div><span class="metric">0</span><small> churn</small></div>
             </div>
             <div class="col-md-3">
-              <div><span class="metric">31.17</span><small> complexity</small></div>
-              <div><span class="metric">58</span><small> duplications</small></div>
+              <div><span class="metric">33.96</span><small> complexity</small></div>
+              <div><span class="metric">34</span><small> duplications</small></div>
             </div>
           </div>
         </div>
@@ -88,7 +88,7 @@
             <li><a href="#" id="toggle-code" class="toggle-button button">code</a></li>
             <li class="active">
               <a href="#" id="toggle-smells" class="toggle-button button">
-                5
+                2
                 smells
               </a>
             </li>
@@ -99,16 +99,19 @@
 
     <code class="prettyprint linenums lang-ruby file-code js-file-code">class VotesController &lt; ApplicationController<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md" target="_blank"><b>IrresponsibleModule</b></a>        </span>      </div>      <span>VotesController has no descriptive comment</span>          </div>  </li></ol>
   before_action :check_eligibility, only: [:create, :destroy]
-  def create<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="http://docs.seattlerb.org/flay/" target="_blank"><b>DuplicateCode</b></a>        </span>      </div>      <span>Similar code found in 4 nodes</span>              <span>Locations:</span>                  <a href="collaborations_controller.html#L3" class="js-smell-location">0</a>                  <a href="collaborations_controller.html#L11" class="js-smell-location">1</a>                  <a href="votes_controller.html#L3" class="js-smell-location">2</a>                  <a href="votes_controller.html#L11" class="js-smell-location">3</a>                  </div>  </li></ol>
-      if  @@vote.add == 1<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Class-Variable.md" target="_blank"><b>ClassVariable</b></a>        </span>      </div>      <span>VotesController declares the class variable '@@vote'</span>              <span>Locations:</span>                  <a href="votes_controller.html#L4" class="js-smell-location">0</a>                  <a href="votes_controller.html#L12" class="js-smell-location">1</a>                  <a href="votes_controller.html#L25" class="js-smell-location">2</a>                  </div>  </li></ol>
+
+  #This action is used to create the vote of a user on a challenge
+  def create<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="http://docs.seattlerb.org/flay/" target="_blank"><b>DuplicateCode</b></a>        </span>      </div>      <span>Similar code found in 4 nodes</span>              <span>Locations:</span>                  <a href="collaborations_controller.html#L5" class="js-smell-location">0</a>                  <a href="collaborations_controller.html#L13" class="js-smell-location">1</a>                  <a href="votes_controller.html#L5" class="js-smell-location">2</a>                  <a href="votes_controller.html#L14" class="js-smell-location">3</a>                  </div>  </li></ol>
+      if  vote.add == 1
         redirect_to root_path, notice: &quot;Vote Added!&quot;
       else
         redirect_to root_path, alert: &quot;Error: Vote not added!&quot;
       end
   end
 
-  def destroy<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="http://docs.seattlerb.org/flay/" target="_blank"><b>DuplicateCode</b></a>        </span>      </div>      <span>Similar code found in 4 nodes</span>              <span>Locations:</span>                  <a href="collaborations_controller.html#L3" class="js-smell-location">0</a>                  <a href="collaborations_controller.html#L11" class="js-smell-location">1</a>                  <a href="votes_controller.html#L3" class="js-smell-location">2</a>                  <a href="votes_controller.html#L11" class="js-smell-location">3</a>                  </div>  </li></ol>
-    if @@vote.delete == 1<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Class-Variable.md" target="_blank"><b>ClassVariable</b></a>        </span>      </div>      <span>VotesController declares the class variable '@@vote'</span>              <span>Locations:</span>                  <a href="votes_controller.html#L4" class="js-smell-location">0</a>                  <a href="votes_controller.html#L12" class="js-smell-location">1</a>                  <a href="votes_controller.html#L25" class="js-smell-location">2</a>                  </div>  </li></ol>
+  #This action is used to destroy the vote of a user on a challenge
+  def destroy<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="http://docs.seattlerb.org/flay/" target="_blank"><b>DuplicateCode</b></a>        </span>      </div>      <span>Similar code found in 4 nodes</span>              <span>Locations:</span>                  <a href="collaborations_controller.html#L5" class="js-smell-location">0</a>                  <a href="collaborations_controller.html#L13" class="js-smell-location">1</a>                  <a href="votes_controller.html#L5" class="js-smell-location">2</a>                  <a href="votes_controller.html#L14" class="js-smell-location">3</a>                  </div>  </li></ol>
+    if vote.delete == 1
       redirect_to root_path, notice: &quot;Vote Removed!&quot;
     else
       redirect_to root_path, alert: &quot;Error: Vote not removed!&quot;
@@ -116,12 +119,17 @@
   end
 
   private
-  def check_eligibility<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="http://docs.seattlerb.org/flay/" target="_blank"><b>DuplicateCode</b></a>        </span>      </div>      <span>Similar code found in 2 nodes</span>              <span>Locations:</span>                  <a href="collaborations_controller.html#L20" class="js-smell-location">0</a>                  <a href="votes_controller.html#L20" class="js-smell-location">1</a>                  </div>  </li></ol>
-    if params[:user_id].to_i == current_user.id<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Duplicate-Method-Call.md" target="_blank"><b>DuplicateMethodCall</b></a>        </span>      </div>      <span>VotesController#check_eligibility calls 'current_user.id' 2 times</span>              <span>Locations:</span>                  <a href="votes_controller.html#L21" class="js-smell-location">0</a>                  <a href="votes_controller.html#L25" class="js-smell-location">1</a>                  </div>  </li></ol>
+  #returns the object of VoteCollaboration object
+  def vote
+    return( VoteCollaboration.new(&quot;Vote&quot;, params[:challenge_id], current_user.id ) )
+  end
+
+  # This method checks before an action is executed if the user is the owner of the challenge and if he is trying to Vote.
+  #If the request cam from a owner he/she id not allowed to vote.
+  def check_eligibility
+    if params[:user_id].to_i == current_user.id
       redirect_to root_path, alert: &quot;Error: Owner can&#39;t vote&quot;
     end
-
-    @@vote = VoteCollaboration.new(&quot;Vote&quot;, params[:challenge_id], current_user.id )<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Class-Variable.md" target="_blank"><b>ClassVariable</b></a>        </span>      </div>      <span>VotesController declares the class variable '@@vote'</span>              <span>Locations:</span>                  <a href="votes_controller.html#L4" class="js-smell-location">0</a>                  <a href="votes_controller.html#L12" class="js-smell-location">1</a>                  <a href="votes_controller.html#L25" class="js-smell-location">2</a>                  </div>  </li>  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Duplicate-Method-Call.md" target="_blank"><b>DuplicateMethodCall</b></a>        </span>      </div>      <span>VotesController#check_eligibility calls 'current_user.id' 2 times</span>              <span>Locations:</span>                  <a href="votes_controller.html#L21" class="js-smell-location">0</a>                  <a href="votes_controller.html#L25" class="js-smell-location">1</a>                  </div>  </li></ol>
   end
 end
 </code>

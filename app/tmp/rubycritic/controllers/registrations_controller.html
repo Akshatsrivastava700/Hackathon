@@ -68,7 +68,7 @@
           </div>
           <div class="code-statistics col-md-11">
             <div class="col-md-3">
-              <div><span class="metric">10</span><small> lines of codes</small></div>
+              <div><span class="metric">11</span><small> lines of codes</small></div>
               <div><span class="metric">2</span><small> methods</small></div>
             </div>
             <div class="col-md-3">
@@ -98,6 +98,7 @@
     </div>
 
     <code class="prettyprint linenums lang-ruby file-code js-file-code">class RegistrationsController &lt; Devise::RegistrationsController<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md" target="_blank"><b>IrresponsibleModule</b></a>        </span>      </div>      <span>RegistrationsController has no descriptive comment</span>          </div>  </li></ol>
+  #The methods below modifies the predefined methods sign_up_params and account_update_params to include custom fields in devise authentication.
   private
   def sign_up_params
     params.require(:user).permit(:firstname, :lastname, :email, :password, :password_confirmation)

@@ -68,7 +68,7 @@
           </div>
           <div class="code-statistics col-md-11">
             <div class="col-md-3">
-              <div><span class="metric">25</span><small> lines of codes</small></div>
+              <div><span class="metric">27</span><small> lines of codes</small></div>
               <div><span class="metric">3</span><small> methods</small></div>
             </div>
             <div class="col-md-3">
@@ -102,12 +102,13 @@
     #For displaying a challenge
   end
 
+  #This action allows a user to create a challenge 
   def create<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="http://docs.seattlerb.org/flog/" target="_blank"><b>HighComplexity</b></a>        </span>      </div>      <span>ChallengesController#create has a flog score of 26</span>          </div>  </li></ol>
-     params[:challenge][:user_id] = current_user.id.to_i<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Duplicate-Method-Call.md" target="_blank"><b>DuplicateMethodCall</b></a>        </span>      </div>      <span>ChallengesController#create calls 'params[:challenge]' 2 times</span>              <span>Locations:</span>                  <a href="challenges_controller.html#L7" class="js-smell-location">0</a>                  <a href="challenges_controller.html#L11" class="js-smell-location">1</a>                  </div>  </li></ol>
+     params[:challenge][:user_id] = current_user.id.to_i<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Duplicate-Method-Call.md" target="_blank"><b>DuplicateMethodCall</b></a>        </span>      </div>      <span>ChallengesController#create calls 'params[:challenge]' 2 times</span>              <span>Locations:</span>                  <a href="challenges_controller.html#L8" class="js-smell-location">0</a>                  <a href="challenges_controller.html#L12" class="js-smell-location">1</a>                  </div>  </li></ol>
      @challenge = Challenge.new(set_params)
-     
+
      if @challenge.save
-       if TagChallenge.add_tag(params[:challenge][:tag_id], @challenge.id) == 1<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Duplicate-Method-Call.md" target="_blank"><b>DuplicateMethodCall</b></a>        </span>      </div>      <span>ChallengesController#create calls 'params[:challenge]' 2 times</span>              <span>Locations:</span>                  <a href="challenges_controller.html#L7" class="js-smell-location">0</a>                  <a href="challenges_controller.html#L11" class="js-smell-location">1</a>                  </div>  </li></ol>
+       if TagChallenge.add_tag(params[:challenge][:tag_id], @challenge.id) == 1<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Duplicate-Method-Call.md" target="_blank"><b>DuplicateMethodCall</b></a>        </span>      </div>      <span>ChallengesController#create calls 'params[:challenge]' 2 times</span>              <span>Locations:</span>                  <a href="challenges_controller.html#L8" class="js-smell-location">0</a>                  <a href="challenges_controller.html#L12" class="js-smell-location">1</a>                  </div>  </li></ol>
          redirect_to root_path, notice: &quot;Challenge Added&quot;
        else
          redirect_to root_path, notice: &quot;Challenge Added without tag&quot;
@@ -118,6 +119,7 @@
   end
 
   private
+  #This method gives permission to the parameters which can be saved in the database.
   def set_params
     params.require(:challenge).permit(:title, :description, :user_id)
   end

@@ -68,15 +68,15 @@
           </div>
           <div class="code-statistics col-md-11">
             <div class="col-md-3">
-              <div><span class="metric">11</span><small> lines of codes</small></div>
+              <div><span class="metric">8</span><small> lines of codes</small></div>
               <div><span class="metric">1</span><small> methods</small></div>
             </div>
             <div class="col-md-3">
-              <div><span class="metric">12.0</span><small> complexity/method</small></div>
+              <div><span class="metric">7.4</span><small> complexity/method</small></div>
               <div><span class="metric">0</span><small> churn</small></div>
             </div>
             <div class="col-md-3">
-              <div><span class="metric">12.0</span><small> complexity</small></div>
+              <div><span class="metric">7.43</span><small> complexity</small></div>
               <div><span class="metric">0</span><small> duplications</small></div>
             </div>
           </div>
@@ -98,14 +98,11 @@
     </div>
 
     <code class="prettyprint linenums lang-ruby file-code js-file-code">class HomeController &lt; ApplicationController<ol class="nocode errors smells">  <li>    <div class="description">      <div class="heading">        <span>          <i class="fa fa-warning" aria-hidden="true"></i>          <a href="https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md" target="_blank"><b>IrresponsibleModule</b></a>        </span>      </div>      <span>HomeController has no descriptive comment</span>          </div>  </li></ol>
+  before_action :logged_in?
   def index
-    if user_signed_in?
       @challenges     = Challenge.paginate(page: params[:page])
       @collaborations = Collaboration.all
       @tag            = Tag.select(:id, :tag_name).all
-    else
-      redirect_to new_user_session_path
-    end
   end
 end
 </code>
